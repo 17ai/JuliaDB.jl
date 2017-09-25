@@ -205,7 +205,7 @@ function _load_table(file::Union{IO, AbstractString, AbstractArray}, delim=',';
 
     datavecs = map(_datacols) do i
         if i == 0
-            fill(Nullable{Union{}}(), n) # missing column
+            fill(DataValue{Union{}}(), n) # missing column
         else
             cols[i]
         end
